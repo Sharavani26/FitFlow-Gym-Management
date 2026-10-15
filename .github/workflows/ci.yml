@@ -1,4 +1,3 @@
-yaml
 name: FitFlow CI Pipeline
 
 on:
