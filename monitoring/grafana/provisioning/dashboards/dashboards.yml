@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: FitFlow
+    folder: FitFlow
+    type: file
+    options:
+      path: ${DASHBOARDS_PATH}

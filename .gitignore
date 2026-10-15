@@ -1,0 +1,46 @@
+﻿# Dependencies
+node_modules/
+
+# Environment files and secrets (never commit)
+.env
+.env.*
+!.env.example
+monitoring/prometheus/secrets/
+monitoring/prometheus/data/
+monitoring/grafana/data/
+monitoring/grafana/logs/
+monitoring/grafana/plugins/
+monitoring/grafana/tools/grafana-*/
+monitoring/logs/
+monitoring/run/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+```gitignore
+# Downloaded Grafana and Prometheus binaries
+monitoring/grafana/tools/
+monitoring/prometheus/tools/
+monitoring/prometheus/*.zip
+monitoring/prometheus/*.exe
+monitoring/grafana/*.tar.gz
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/

@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - rules/*.yml
+
+scrape_configs:
+  - job_name: fitflow-api
+    metrics_path: /metrics
+    authorization:
+      type: Bearer
+      credentials_file: secrets/metrics_token
+    static_configs:
+      - targets: ['localhost:5000']
+
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: windows
+    static_configs:
+      - targets: ['localhost:9182']
+
+  # Optional: uncomment after installing windows_exporter (see Part 4)
+  # - job_name: windows
+  #   static_configs:
+  #     - targets: ['localhost:9182']
