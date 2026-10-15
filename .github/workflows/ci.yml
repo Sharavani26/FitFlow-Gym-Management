@@ -57,3 +57,17 @@ jobs:
 
       - name: Run Backend Tests
         run: npm test
+
+  container-images:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Backend Image
+        run: docker build -t fitflow-server:ci ./server
+
+      - name: Build Frontend Image
+        run: docker build -t fitflow-client:ci ./client
